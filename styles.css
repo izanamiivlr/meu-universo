@@ -136,6 +136,13 @@ header.banner h2 {
     font-weight: bold;
 }
 
+.card h2 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--verde-escuro);
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+}
+
 .card p {
     font-size: 0.98rem;
 }
