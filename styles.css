@@ -3,7 +3,7 @@
     --azul: #0b2a53;
     --verde: #9dbba5;
     --verde-escuro: #203d0d;
-     --verde-claro: #b8d4be;
+    --verde-claro: #b8d4be;
     --creme: #3c5e8a;
     --texto: #36306e;
     --preto: #000000;
@@ -115,11 +115,25 @@ header.banner h2 {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.37);
 }
 
-.card h2 {
-    font-family: 'Fredoka', sans-serif;
+.curiosidades-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.curiosidades-list li {
+    font-size: 0.98rem;
+    padding-left: 18px;
+    position: relative;
+}
+
+.curiosidades-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
     color: var(--verde-escuro);
-    font-size: 1.4rem;
-    margin-bottom: 14px;
+    font-weight: bold;
 }
 
 .card p {
