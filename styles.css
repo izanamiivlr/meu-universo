@@ -36,8 +36,9 @@ body::before {
 
 /* Topo */
 header.banner {
-    background: url('cat-banner.gif');
+    background: url('cat-banner.gif') no-repeat;
     background-size: 100%;
+    background-repeat: no-repeat;
     background-position: 50% 85%;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -220,6 +221,12 @@ ul.social-list li {
     max-width: 280px;
     width: 80%;
     margin: 0 auto 30px;
+}
+
+.convite-final {
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(126, 126, 126, 0.836);
 }
 
 footer {
