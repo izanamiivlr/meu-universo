@@ -19,11 +19,13 @@
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background: url('green-background.jpg');
+    background: url('green-background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--preto);
     line-height: 1.6;
-    background-size: center;
-    background-position: center;
     overflow-x: hidden;
 }
 
@@ -38,7 +40,7 @@ body::before {
 /* Topo */
 header.banner {
     background: url('cat-banner.gif') no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 85%;
     color: rgb(255, 255, 255);
@@ -72,30 +74,30 @@ header.banner h2 {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 480px) {
+    header.banner {
+        padding: 50px 20px 40px;
+    }
+
+    header.banner h3 {
+        font-size: 0.9rem;
+    }
+}
+
 .container {
-    max-width: 680px;      /* largura só dos cards, sem contar o spotify */
+     max-width: 1000px;
     margin: -40px auto 0;
     padding: 0 24px 60px;
-    position: relative;
-    z-index: 2;
-}
 
-.coluna-lateral {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 24px;
-    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
 
-@media (max-width: 1100px) {
-    .coluna-lateral {
-        position: static;
-        left: auto;
-        margin-left: 0;
-        margin-top: 24px;
-        width: 100%;
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -105,10 +107,9 @@ header.banner h2 {
     -webkit-backdrop-filter: blur(3px);
     border-radius: 18px;
     padding: 30px;
-    margin-bottom: 28px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    min-height: 420px;
 
 .card:hover {
     transform: translateY(-4px);
@@ -246,9 +247,12 @@ ul.social-list li {
 }
 
 .convite-final {
+   grid-column: 1 / -1;
     text-align: center;
     font-size: 0.95rem;
     color: var(--verde-claro);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 footer {
