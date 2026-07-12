@@ -117,9 +117,12 @@
     .then(resposta => resposta.json())
     .then(dados => {
         const container = document.querySelector("#vaporeon-info")
+        const tipos = dados.types.map(t => t.type.name).join(", ")
+
         container.innerHTML = `
             <img src="${dados.sprites.front_default}" alt="Vaporeon">
             <p><strong>Nome:</strong> ${dados.name}</p>
+            <p><strong>Tipo:</strong> ${tipos}</p>
             <p><strong>Experiência base:</strong> ${dados.base_experience}</p>
             <p><strong>Altura:</strong> ${dados.height / 10}m</p>
             <p><strong>Peso:</strong> ${dados.weight / 10}kg</p>
